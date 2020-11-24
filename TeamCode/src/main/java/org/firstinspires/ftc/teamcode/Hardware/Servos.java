@@ -10,39 +10,44 @@ public class Servos {
 
 
     private Servo flap;             // Hub 3 Servo Slot 3
-    private CRServo horizontal;     // Hub 3 Servo Slot 2
-    private Servo cap;              // Hub 3 Servo Slot 4
-    private Servo kick;
+    private Servo kick;             // Hub 3 Servo Slot 2
+    private Servo release;          // Hub 3 Servo Slot 4
+    private Servo latch;
 
-    private final double CLAW_CLOSED = 0.2;
-    private final double CLAW_OPEN = 0;
+    private final double FLAP_UP = 1;
+    private final double FLAP_DOWN = 0;
 
-    private final double KICK_UP = 0;
     private final double KICK_IN = 1;
+    private final double KICK_OUT = 0;
 
     private final double FLIP_IN = 0;
     private final double FLIP_OUT = 1;
 
-    public Servos(Servo f, Servo cl, CRServo h, Servo ca, Servo k)
+    private final double RELEASED = 1;
+
+    private final double LATCH_ON = 1;
+    private final double LATCH_OFF = 0;
+
+    public Servos(Servo f, Servo cl, Servo ca, Servo k)
     {
         //servo hardware moments
         cl.setDirection(Servo.Direction.FORWARD);
-        h.setDirection(CRServo.Direction.FORWARD);
         f.setDirection(Servo.Direction.FORWARD);
         k.setDirection(Servo.Direction.FORWARD);
         ca.setDirection(Servo.Direction.FORWARD);
 
-        horizontal = h;
-        cap = ca;
-        kick = k;
+        flap=f;
+        kick=cl;
+        release = ca;
+        latch = k;
     }
 
     public void downFlap() {
-        flap.setPosition(CLAW_CLOSED);
+        flap.setPosition(FLAP_DOWN);
     }
 
     public void upFlap() {
-        flap.setPosition(CLAW_OPEN);
+        flap.setPosition(FLAP_UP);
     }
 
     public void kick() {
@@ -50,34 +55,13 @@ public class Servos {
     }
 
     public void unkick() {
-        kick.setPosition(KICK_UP);
+        kick.setPosition(KICK_OUT);
     }
 
-    public void moveOut() {
-        horizontal.setPower(1);
+    public void release() {release.setPosition(RELEASED); }
 
-        final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
-        executor.schedule(new Runnable() {
-            @Override
-            public void run() {
-                horizontal.setPower(0);
-            }
-        }, 1000, TimeUnit.MILLISECONDS);
-    }
+    public void latch() {latch.setPosition(LATCH_ON);}
 
-    public void moveIn() {
-        horizontal.setPower(-1);
+    public void unlatch() {latch.setPosition(LATCH_OFF);}
 
-        final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1);
-        executor.schedule(new Runnable() {
-            @Override
-            public void run() {
-                horizontal.setPower(0);
-            }
-        }, 1000, TimeUnit.MILLISECONDS);
-    }
-
-    public void placeCapstone() {
-        cap.setPosition(0); //UNKNOWN POSITION!
-    }
 }

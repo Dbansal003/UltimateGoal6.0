@@ -62,6 +62,7 @@ import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -90,6 +91,8 @@ public class Robot {
     public Sensors c;
     public IMU imu;
     public RobotMotors robotMotors;
+    public wheelStick wheelStick;
+    public Flywheel Flywheel;
 
 
     private VuforiaLocalizer vuforia;
@@ -122,17 +125,12 @@ public class Robot {
         DcMotor backLeft = hardwareMap.dcMotor.get("backLeft");
         DcMotor frontRight = hardwareMap.dcMotor.get("frontRight");
         DcMotor backRight = hardwareMap.dcMotor.get("backRight");
-        DcMotor intakeWheelL = hardwareMap.dcMotor.get("intakeWheelL");
-        DcMotor intakeWheelR = hardwareMap.dcMotor.get("intakeWheelR");
-        DcMotor liftMotorL = hardwareMap.dcMotor.get("liftMotorL");
-        DcMotor liftMotorR = hardwareMap.dcMotor.get("liftMotorR");
-        Servo foundationArmL = hardwareMap.servo.get("foundationArmL");
-        Servo foundationArmR = hardwareMap.servo.get("foundationArmR");
-        Servo claw = hardwareMap.servo.get("claw");
-        CRServo horizontal = hardwareMap.crservo.get("horizontal");
-        Servo flip = hardwareMap.servo.get("flip");
-        Servo cap = hardwareMap.servo.get("cap");
+        DcMotor Flywheel = hardwareMap.dcMotor.get("Flywheel");
+        DcMotor wheelStick = hardwareMap.dcMotor.get("wheelStick");
+        Servo flap = hardwareMap.servo.get("flap");
         Servo kick = hardwareMap.servo.get("kick");
+        Servo release = hardwareMap.servo.get("release");
+        Servo latch = hardwareMap.servo.get("latch");
         ColorSensor color = hardwareMap.colorSensor.get("colorSensor");
 
 
@@ -159,7 +157,7 @@ public class Robot {
 
 
 
-        s = new Servos(flip,claw,horizontal,cap,kick);
+        s = new Servos(flap,kick,release,latch);
         driveTrain = new DriveTrainVel(frontLeft, frontRight, backLeft, backRight);
         robotMotors = new RobotMotors(frontLeft,frontRight,backLeft,backRight);
 

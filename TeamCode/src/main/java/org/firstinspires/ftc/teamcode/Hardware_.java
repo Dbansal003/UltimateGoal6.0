@@ -33,6 +33,7 @@ import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -50,6 +51,10 @@ public class Hardware_ {
     DcMotor backLeft;       // Hub 2 Slot 1
 
     // MECHANISMS
+    Servo flap;
+    Servo hockey;
+    Servo release;
+    Servo latch;
     Servo foundationArmL;   // Hub 3 Servo Slot 5
     Servo foundationArmR;   // Hub 3 Servo Slot 0
     Servo flip;             // Hub 3 Servo Slot 3
@@ -58,11 +63,9 @@ public class Hardware_ {
     Servo cap;              // Hub 3 Servo Slot 4
     Servo kick;
 
-    DcMotor intakeWheelL;   // Hub 2 Slot 3
-    DcMotor intakeWheelR;   // Hub 3 Slot 3
-
-    DcMotor liftMotorL;     // Hub 2 Slot 2
-    DcMotor liftMotorR;     // Hub 3 Slot 3
+    DcMotor wheelStick;   // Hub 2 Slot 3
+    DcMotor Flywheel;
+    DcMotor wobbleGoal;
 
     // SENSORS
     ColorSensor color;      //Hub 3 I2C Bus 1 Name: 'colorSensor'
@@ -94,24 +97,16 @@ public class Hardware_ {
         frontLeft = hwMap.dcMotor.get("frontLeft");
         backRight = hwMap.dcMotor.get("backRight");
         backLeft = hwMap.dcMotor.get("backLeft");
+        wheelStick = hwMap.dcMotor.get("wheelStick");
+        Flywheel = hwMap.dcMotor.get("Flywheel");
 
-        foundationArmL = hwMap.servo.get("foundationArmL");
-        foundationArmR = hwMap.servo.get("foundationArmR");
-        claw = hwMap.servo.get("claw");
-        horizontal = hwMap.crservo.get("horizontal");
-        flip = hwMap.servo.get("flip");
-        cap = hwMap.servo.get("cap");
+        flap = hwMap.servo.get("flap");
         kick = hwMap.servo.get("kick");
+        release = hwMap.servo.get("release");
+        latch = hwMap.servo.get("latch");
 
 
         color = hwMap.colorSensor.get("colorSensor");
-
-        intakeWheelL = hwMap.dcMotor.get("intakeWheelL");
-        intakeWheelR = hwMap.dcMotor.get("intakeWheelR");
-
-        liftMotorL = hwMap.dcMotor.get("liftMotorL");
-        liftMotorR = hwMap.dcMotor.get("liftMotorR");
-
     }
 
     private void initMotorSettings(boolean initAuto) {
@@ -123,11 +118,8 @@ public class Hardware_ {
         backRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         backLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        intakeWheelL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        intakeWheelR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-
-        liftMotorR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        liftMotorL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        Flywheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        wheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
         frontRight.setDirection(DcMotor.Direction.REVERSE);
@@ -135,11 +127,8 @@ public class Hardware_ {
         backRight.setDirection(DcMotor.Direction.REVERSE);
         backLeft.setDirection(DcMotor.Direction.FORWARD);
 
-        intakeWheelL.setDirection(DcMotor.Direction.FORWARD);
-        intakeWheelR.setDirection(DcMotor.Direction.REVERSE);
-
-        liftMotorR.setDirection(DcMotor.Direction.FORWARD);
-        liftMotorL.setDirection(DcMotor.Direction.FORWARD);
+        Flywheel.setDirection(DcMotor.Direction.FORWARD);
+        wheelStick.setDirection(DcMotor.Direction.FORWARD);
 
         wheels.add(frontLeft);
         wheels.add(frontRight);
@@ -149,13 +138,10 @@ public class Hardware_ {
         foundationArmR.setDirection(Servo.Direction.FORWARD);
         foundationArmL.setDirection(Servo.Direction.REVERSE);
 
-        claw.setDirection(Servo.Direction.FORWARD);
-        horizontal.setDirection(CRServo.Direction.FORWARD);
-        flip.setDirection(Servo.Direction.FORWARD);
+        flap.setDirection(Servo.Direction.FORWARD);
         kick.setDirection(Servo.Direction.FORWARD);
-        cap.setDirection(Servo.Direction.FORWARD);
-
-
+        release.setDirection(Servo.Direction.FORWARD);
+        latch.setDirection(Servo.Direction.FORWARD);
 
     }
 
@@ -166,14 +152,9 @@ public class Hardware_ {
         backRight.setPower(0);
         backLeft.setPower(0);
 
-        intakeWheelL.setPower(0);
-        intakeWheelR.setPower(0);
-
         foundationArmL.setPosition(0);
         foundationArmR.setPosition(0);
 
-        liftMotorL.setPower(0);
-        liftMotorR.setPower(0);
     }
 
     public void waitForTick(long periodMs) throws InterruptedException {
