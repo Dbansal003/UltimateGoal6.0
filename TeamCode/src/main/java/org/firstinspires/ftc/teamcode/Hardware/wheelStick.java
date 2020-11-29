@@ -13,4 +13,6 @@ public class wheelStick {
     public void noIntake() {
         wheelStick.setPower(0);
     }
+
+    public void reverseIntake() {wheelStick.setPower(-1);}
 }

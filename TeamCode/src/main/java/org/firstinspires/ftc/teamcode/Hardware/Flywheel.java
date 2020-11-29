@@ -6,9 +6,11 @@ public class Flywheel {
 
     public DcMotor flywheelMotor;
 
+    public double maxPower=1;
+
     public void launch()
     {
-        flywheelMotor.setPower(1);
+        flywheelMotor.setPower(maxPower);
     }
 
     public void noLaunch()

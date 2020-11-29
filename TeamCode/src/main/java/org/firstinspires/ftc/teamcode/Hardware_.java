@@ -33,7 +33,6 @@ import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
@@ -52,16 +51,10 @@ public class Hardware_ {
 
     // MECHANISMS
     Servo flap;
-    Servo hockey;
+    Servo kick;
     Servo release;
     Servo latch;
-    Servo foundationArmL;   // Hub 3 Servo Slot 5
-    Servo foundationArmR;   // Hub 3 Servo Slot 0
-    Servo flip;             // Hub 3 Servo Slot 3
-    Servo claw;             // Hub 3 Servo Slot 1
-    CRServo horizontal;     // Hub 3 Servo Slot 2
-    Servo cap;              // Hub 3 Servo Slot 4
-    Servo kick;
+    CRServo buffer;
 
     DcMotor wheelStick;   // Hub 2 Slot 3
     DcMotor Flywheel;
@@ -104,6 +97,7 @@ public class Hardware_ {
         kick = hwMap.servo.get("kick");
         release = hwMap.servo.get("release");
         latch = hwMap.servo.get("latch");
+        buffer = hwMap.crservo.get("buffer");
 
 
         color = hwMap.colorSensor.get("colorSensor");
@@ -135,8 +129,8 @@ public class Hardware_ {
         wheels.add(backLeft);
         wheels.add(backRight);
 
-        foundationArmR.setDirection(Servo.Direction.FORWARD);
-        foundationArmL.setDirection(Servo.Direction.REVERSE);
+//        foundationArmR.setDirection(Servo.Direction.FORWARD);
+//        foundationArmL.setDirection(Servo.Direction.REVERSE);
 
         flap.setDirection(Servo.Direction.FORWARD);
         kick.setDirection(Servo.Direction.FORWARD);
@@ -152,9 +146,10 @@ public class Hardware_ {
         backRight.setPower(0);
         backLeft.setPower(0);
 
-        foundationArmL.setPosition(0);
-        foundationArmR.setPosition(0);
-
+        flap.setPosition(0);
+        kick.setPosition(0);
+        release.setPosition(0);
+        latch.setPosition(0);
     }
 
     public void waitForTick(long periodMs) throws InterruptedException {

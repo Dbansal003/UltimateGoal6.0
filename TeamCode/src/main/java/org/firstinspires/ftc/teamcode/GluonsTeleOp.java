@@ -110,16 +110,33 @@ public class GluonsTeleOp extends LinearOpMode {
             // WheelStick Control
             if(gamepad1.right_trigger>0.2) {
                 robot.wheelStick.intake();
+                robot.s.onBuffer();
+            }
+            else {
+                robot.wheelStick.noIntake();
+                robot.s.offBuffer();
+            }
+
+            // Reverse Intake
+            if(gamepad1.left_trigger>0.2) {
+                robot.wheelStick.reverseIntake();
             }
             else {
                 robot.wheelStick.noIntake();
             }
 
 
-
-
             // Gamepad 2 - Functions GAMER MOMENTS 2020
 
+            //Flywheel Speed Controls
+            if(gamepad2.x)
+            {
+                maxPower=0.6;
+            }
+            if(gamepad2.a)
+            {
+                maxPower=1;
+            }
 
             //FlyWheel Control
             if(gamepad2.left_trigger>0.2) {

@@ -131,6 +131,7 @@ public class Robot {
         Servo kick = hardwareMap.servo.get("kick");
         Servo release = hardwareMap.servo.get("release");
         Servo latch = hardwareMap.servo.get("latch");
+        CRServo buffer = hardwareMap.crservo.get("buffer");
         ColorSensor color = hardwareMap.colorSensor.get("colorSensor");
 
 
@@ -157,7 +158,7 @@ public class Robot {
 
 
 
-        s = new Servos(flap,kick,release,latch);
+        s = new Servos(flap,kick,release,latch,buffer);
         driveTrain = new DriveTrainVel(frontLeft, frontRight, backLeft, backRight);
         robotMotors = new RobotMotors(frontLeft,frontRight,backLeft,backRight);
 

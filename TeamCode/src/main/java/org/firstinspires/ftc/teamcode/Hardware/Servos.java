@@ -13,6 +13,7 @@ public class Servos {
     private Servo kick;             // Hub 3 Servo Slot 2
     private Servo release;          // Hub 3 Servo Slot 4
     private Servo latch;
+    private CRServo buffer;
 
     private final double FLAP_UP = 1;
     private final double FLAP_DOWN = 0;
@@ -20,26 +21,25 @@ public class Servos {
     private final double KICK_IN = 1;
     private final double KICK_OUT = 0;
 
-    private final double FLIP_IN = 0;
-    private final double FLIP_OUT = 1;
-
     private final double RELEASED = 1;
 
     private final double LATCH_ON = 1;
     private final double LATCH_OFF = 0;
 
-    public Servos(Servo f, Servo cl, Servo ca, Servo k)
+    public Servos(Servo f, Servo k, Servo r, Servo l, CRServo b)
     {
         //servo hardware moments
-        cl.setDirection(Servo.Direction.FORWARD);
+        r.setDirection(Servo.Direction.FORWARD);
         f.setDirection(Servo.Direction.FORWARD);
         k.setDirection(Servo.Direction.FORWARD);
-        ca.setDirection(Servo.Direction.FORWARD);
+        l.setDirection(Servo.Direction.FORWARD);
+        b.setDirection(CRServo.Direction.FORWARD);
 
         flap=f;
-        kick=cl;
-        release = ca;
-        latch = k;
+        kick=k;
+        release = r;
+        latch = l;
+        buffer=b;
     }
 
     public void downFlap() {
@@ -63,5 +63,9 @@ public class Servos {
     public void latch() {latch.setPosition(LATCH_ON);}
 
     public void unlatch() {latch.setPosition(LATCH_OFF);}
+
+    public void onBuffer() {buffer.setPower(1);}
+
+    public void offBuffer() {buffer.setPower(0);}
 
 }
