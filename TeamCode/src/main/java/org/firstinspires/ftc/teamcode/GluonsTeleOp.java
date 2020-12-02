@@ -166,13 +166,13 @@ public class GluonsTeleOp extends LinearOpMode {
                 robot.s.unkick();
             }
 
-            //Release Wheelstick Controls
-            if(gamepad2.dpad_left) {
-                if(!released) {
-                    robot.s.release();
-                    released=true;
-                }
-            }
+//            //Release Wheelstick Controls
+//            if(gamepad2.dpad_left) {
+//                if(!released) {
+//                    robot.s.release();
+//                    released=true;
+//                }
+//            }
 
             //Latch Controls
             if(latchButtonCD == 0 && gamepad2.b) {

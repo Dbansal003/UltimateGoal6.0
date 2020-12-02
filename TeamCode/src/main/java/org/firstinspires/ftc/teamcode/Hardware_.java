@@ -52,7 +52,7 @@ public class Hardware_ {
     // MECHANISMS
     Servo flap;
     Servo kick;
-    Servo release;
+//    Servo release;
     Servo latch;
     CRServo buffer;
 
@@ -95,7 +95,7 @@ public class Hardware_ {
 
         flap = hwMap.servo.get("flap");
         kick = hwMap.servo.get("kick");
-        release = hwMap.servo.get("release");
+//        release = hwMap.servo.get("release");
         latch = hwMap.servo.get("latch");
         buffer = hwMap.crservo.get("buffer");
 
@@ -129,12 +129,9 @@ public class Hardware_ {
         wheels.add(backLeft);
         wheels.add(backRight);
 
-//        foundationArmR.setDirection(Servo.Direction.FORWARD);
-//        foundationArmL.setDirection(Servo.Direction.REVERSE);
-
         flap.setDirection(Servo.Direction.FORWARD);
         kick.setDirection(Servo.Direction.FORWARD);
-        release.setDirection(Servo.Direction.FORWARD);
+//        release.setDirection(Servo.Direction.FORWARD);
         latch.setDirection(Servo.Direction.FORWARD);
 
     }
@@ -148,7 +145,7 @@ public class Hardware_ {
 
         flap.setPosition(0);
         kick.setPosition(0);
-        release.setPosition(0);
+//        release.setPosition(0);
         latch.setPosition(0);
     }
 
