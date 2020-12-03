@@ -29,13 +29,15 @@
 
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+//import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+//import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.Range;
-import org.firstinspires.ftc.teamcode.Hardware.wheelStick;
+//import org.firstinspires.ftc.teamcode.Hardware.wheelStick;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
+
+@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "Gluons TeleOp", group = "TeleOp")
 
 public class GluonsTeleOp extends LinearOpMode {
     Robot robot = new Robot();
@@ -113,7 +115,7 @@ public class GluonsTeleOp extends LinearOpMode {
                 robot.s.onBuffer();
             }
             else {
-                robot.wheelStick.noIntake();
+//                robot.wheelStick.noIntake();
                 robot.s.offBuffer();
             }
 
@@ -122,7 +124,7 @@ public class GluonsTeleOp extends LinearOpMode {
                 robot.wheelStick.reverseIntake();
             }
             else {
-                robot.wheelStick.noIntake();
+//                robot.wheelStick.noIntake();
             }
 
 
@@ -143,7 +145,7 @@ public class GluonsTeleOp extends LinearOpMode {
                 robot.Flywheel.launch();
             }
             else {
-                robot.Flywheel.noLaunch();
+//                robot.Flywheel.noLaunch();
             }
 
             //Flap Control

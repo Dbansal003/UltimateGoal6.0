@@ -132,7 +132,7 @@ public class Robot {
 //        Servo release = hardwareMap.servo.get("release");
         Servo latch = hardwareMap.servo.get("latch");
         CRServo buffer = hardwareMap.crservo.get("buffer");
-        ColorSensor color = hardwareMap.colorSensor.get("colorSensor");
+//        ColorSensor color = hardwareMap.colorSensor.get("colorSensor");
 
 
         gyro = hardwareMap.get(BNO055IMU.class, "imu");

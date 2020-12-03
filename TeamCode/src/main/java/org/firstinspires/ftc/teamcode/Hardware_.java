@@ -56,12 +56,12 @@ public class Hardware_ {
     Servo latch;
     CRServo buffer;
 
-    DcMotor wheelStick;   // Hub 2 Slot 3
+    DcMotor wheelStick;
     DcMotor Flywheel;
-    DcMotor wobbleGoal;
+//    DcMotor wobbleGoal;
 
     // SENSORS
-    ColorSensor color;      //Hub 3 I2C Bus 1 Name: 'colorSensor'
+//    ColorSensor color;      //Hub 3 I2C Bus 1 Name: 'colorSensor'
 
     public BNO055IMU imu;
 
@@ -100,7 +100,7 @@ public class Hardware_ {
         buffer = hwMap.crservo.get("buffer");
 
 
-        color = hwMap.colorSensor.get("colorSensor");
+//        color = hwMap.colorSensor.get("colorSensor");
     }
 
     private void initMotorSettings(boolean initAuto) {
@@ -116,10 +116,10 @@ public class Hardware_ {
         wheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
-        frontRight.setDirection(DcMotor.Direction.REVERSE);
-        frontLeft.setDirection(DcMotor.Direction.FORWARD);
-        backRight.setDirection(DcMotor.Direction.REVERSE);
-        backLeft.setDirection(DcMotor.Direction.FORWARD);
+        frontRight.setDirection(DcMotor.Direction.FORWARD);
+        frontLeft.setDirection(DcMotor.Direction.REVERSE);
+        backRight.setDirection(DcMotor.Direction.FORWARD);
+        backLeft.setDirection(DcMotor.Direction.REVERSE);
 
         Flywheel.setDirection(DcMotor.Direction.FORWARD);
         wheelStick.setDirection(DcMotor.Direction.FORWARD);

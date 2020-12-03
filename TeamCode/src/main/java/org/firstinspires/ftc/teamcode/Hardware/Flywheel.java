@@ -13,8 +13,8 @@ public class Flywheel {
         flywheelMotor.setPower(maxPower);
     }
 
-    public void noLaunch()
-    {
-        flywheelMotor.setPower(0);
-    }
+//    public void noLaunch()
+//    {
+//        flywheelMotor.setPower(0);
+//    }
 }
