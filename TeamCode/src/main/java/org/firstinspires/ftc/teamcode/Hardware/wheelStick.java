@@ -5,25 +5,27 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 public class wheelStick {
 
-    public DcMotor wheelStick;
+    public DcMotor wheelStickMotor;
 
-    public wheelStick(DcMotor wheelStick)
+
+    public wheelStick(DcMotor WheelStick)
     {
-        wheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        wheelStick.setDirection(DcMotor.Direction.FORWARD);
+        WheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        wheelStick=wheelStick;
+        WheelStick.setDirection(DcMotor.Direction.FORWARD);
+        WheelStick.setPower(0);
+
+        wheelStickMotor=WheelStick;
     }
 
     public void intake() {
-        wheelStick.setPower(1);
+        wheelStickMotor.setPower(1);
     }
 
-//    public void noIntake() {
-//        wheelStick.setDirection(DcMotor.Direction.FORWARD);
-//        wheelStick.setPower(0);
-//    }
+    public void noIntake() {
+        wheelStickMotor.setPower(0);
+    }
 
-    public void reverseIntake() {wheelStick.setPower(-1);}
+    public void reverseIntake() {wheelStickMotor.setPower(-1);}
 }

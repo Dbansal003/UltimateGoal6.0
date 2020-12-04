@@ -29,11 +29,12 @@
 
 package org.firstinspires.ftc.teamcode;
 
-//import com.qualcomm.robotcore.eventloop.opmode.Disabled;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-//import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
-//import org.firstinspires.ftc.teamcode.Hardware.wheelStick;
+import org.firstinspires.ftc.teamcode.Hardware.wheelStick;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
@@ -111,20 +112,21 @@ public class GluonsTeleOp extends LinearOpMode {
 
             // WheelStick Control
             if(gamepad1.right_trigger>0.2) {
-                robot.wheelStick.intake();
+
+                robot.WheelStick.intake();
                 robot.s.onBuffer();
             }
             else {
-//                robot.wheelStick.noIntake();
+                robot.WheelStick.noIntake();
                 robot.s.offBuffer();
             }
 
             // Reverse Intake
             if(gamepad1.left_trigger>0.2) {
-                robot.wheelStick.reverseIntake();
+                robot.WheelStick.reverseIntake();
             }
             else {
-//                robot.wheelStick.noIntake();
+                robot.WheelStick.noIntake();
             }
 
 
@@ -133,19 +135,23 @@ public class GluonsTeleOp extends LinearOpMode {
             //Flywheel Speed Controls
             if(gamepad2.x)
             {
-                maxPower=0.6;
+                maxPower=.8;
             }
             if(gamepad2.a)
             {
                 maxPower=1;
             }
+            if(gamepad2.b)
+            {
+                maxPower=.6;
+            }
 
             //FlyWheel Control
             if(gamepad2.left_trigger>0.2) {
-                robot.Flywheel.launch();
+                robot.flywheel.launch();
             }
             else {
-//                robot.Flywheel.noLaunch();
+                robot.flywheel.noLaunch();
             }
 
             //Flap Control

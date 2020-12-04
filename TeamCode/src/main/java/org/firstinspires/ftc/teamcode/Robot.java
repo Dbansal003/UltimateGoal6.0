@@ -91,9 +91,8 @@ public class Robot {
     public Sensors c;
     public IMU imu;
     public RobotMotors robotMotors;
-    public wheelStick wheelStick;
-    public Flywheel Flywheel;
-
+    public wheelStick WheelStick;
+    public Flywheel flywheel;
 
     private VuforiaLocalizer vuforia;
     private static final String VUFORIA_KEY = "AfmBbcz/////AAAAGbLGg++zzk4MiOrcPTc3t9xQj3QHfISJprebOgt5JJ4+83xtFO+ApGlI3GVY/aMgCpoGEIzaJse9sXiYDiLYpJQlGDX765tWJUrqM+pzqLxVXjWA1J6c968/YqYq74Vq5emNxGHj5SF3HP3m43Iq/YYgkSdMv4BR+RThPPnIIzrbAjEAHHtMgH7vVh036+bcw9UqBfSdD/IBqrKpJLERn5+Qi/4Q4EoReCC0CTDfZ+LcY0rUur0QZRkMpxx/9s4eCgIU+qfOcSlBvjoX7QAQ2MImUME1y5yJiyaWueamnhRBOwERGBuDKyGp4eBWp4i3esJcplrWYovjzPg9fL7Thy8v9KnrHy22PUFAYY+1vjKp";
@@ -125,15 +124,14 @@ public class Robot {
         DcMotor backLeft = hardwareMap.dcMotor.get("backLeft");
         DcMotor frontRight = hardwareMap.dcMotor.get("frontRight");
         DcMotor backRight = hardwareMap.dcMotor.get("backRight");
-        DcMotor Flywheel = hardwareMap.dcMotor.get("Flywheel");
-        DcMotor wheelStick = hardwareMap.dcMotor.get("wheelStick");
+        DcMotor flyWheelMotor = hardwareMap.dcMotor.get("Flywheel");
+        DcMotor wheelStickMotor = hardwareMap.dcMotor.get("wheelStick");
         Servo flap = hardwareMap.servo.get("flap");
         Servo kick = hardwareMap.servo.get("kick");
 //        Servo release = hardwareMap.servo.get("release");
         Servo latch = hardwareMap.servo.get("latch");
         CRServo buffer = hardwareMap.crservo.get("buffer");
 //        ColorSensor color = hardwareMap.colorSensor.get("colorSensor");
-
 
         gyro = hardwareMap.get(BNO055IMU.class, "imu");
         angles = gyro.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.ZYX, AngleUnit.RADIANS);
@@ -161,7 +159,8 @@ public class Robot {
         s = new Servos(flap,kick,latch,buffer);
         driveTrain = new DriveTrainVel(frontLeft, frontRight, backLeft, backRight);
         robotMotors = new RobotMotors(frontLeft,frontRight,backLeft,backRight);
-
+        WheelStick = new wheelStick(wheelStickMotor);
+        flywheel = new Flywheel(flyWheelMotor);
     }
     public void waitForTick(long periodMs) throws InterruptedException {
         long remaining = periodMs - (long) speedTimer.milliseconds();

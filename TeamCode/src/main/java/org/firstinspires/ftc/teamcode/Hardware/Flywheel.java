@@ -6,6 +6,15 @@ public class Flywheel {
 
     public DcMotor flywheelMotor;
 
+    public Flywheel(DcMotor flyWheel)
+    {
+        flyWheel.setPower(0);
+        flyWheel.setDirection(DcMotor.Direction.FORWARD);
+        flyWheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        flywheelMotor=flyWheel;
+    }
+
     public double maxPower=1;
 
     public void launch()
@@ -13,8 +22,5 @@ public class Flywheel {
         flywheelMotor.setPower(maxPower);
     }
 
-//    public void noLaunch()
-//    {
-//        flywheelMotor.setPower(0);
-//    }
+    public void noLaunch() { flywheelMotor.setPower(0); }
 }
