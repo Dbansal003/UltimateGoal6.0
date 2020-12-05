@@ -3,20 +3,20 @@ package org.firstinspires.ftc.teamcode.Hardware;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-public class wheelStick {
+public class WheelStick {
 
     public DcMotor wheelStickMotor;
 
 
-    public wheelStick(DcMotor WheelStick)
+    public WheelStick(DcMotor w)
     {
 
-        WheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        w.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        WheelStick.setDirection(DcMotor.Direction.FORWARD);
-        WheelStick.setPower(0);
+        w.setDirection(DcMotor.Direction.FORWARD);
+        w.setPower(0);
 
-        wheelStickMotor=WheelStick;
+        wheelStickMotor=w;
     }
 
     public void intake() {

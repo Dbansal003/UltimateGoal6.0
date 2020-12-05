@@ -91,7 +91,7 @@ public class Robot {
     public Sensors c;
     public IMU imu;
     public RobotMotors robotMotors;
-    public wheelStick WheelStick;
+    public WheelStick wheelStick;
     public Flywheel flywheel;
 
     private VuforiaLocalizer vuforia;
@@ -125,7 +125,7 @@ public class Robot {
         DcMotor frontRight = hardwareMap.dcMotor.get("frontRight");
         DcMotor backRight = hardwareMap.dcMotor.get("backRight");
         DcMotor flyWheelMotor = hardwareMap.dcMotor.get("Flywheel");
-        DcMotor wheelStickMotor = hardwareMap.dcMotor.get("wheelStick");
+        DcMotor wheelStickMotor = hardwareMap.dcMotor.get("WheelStick");
         Servo flap = hardwareMap.servo.get("flap");
         Servo kick = hardwareMap.servo.get("kick");
 //        Servo release = hardwareMap.servo.get("release");
@@ -159,7 +159,7 @@ public class Robot {
         s = new Servos(flap,kick,latch,buffer);
         driveTrain = new DriveTrainVel(frontLeft, frontRight, backLeft, backRight);
         robotMotors = new RobotMotors(frontLeft,frontRight,backLeft,backRight);
-        WheelStick = new wheelStick(wheelStickMotor);
+        wheelStick = new WheelStick(wheelStickMotor);
         flywheel = new Flywheel(flyWheelMotor);
     }
     public void waitForTick(long periodMs) throws InterruptedException {

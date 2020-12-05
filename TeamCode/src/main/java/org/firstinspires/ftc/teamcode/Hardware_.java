@@ -57,7 +57,7 @@ public class Hardware_ {
     Servo latch;
     CRServo buffer;
 
-    DcMotor wheelStick;
+    DcMotor WheelStick;
     DcMotor Flywheel;
 //    DcMotor wobbleGoal;
 
@@ -91,7 +91,7 @@ public class Hardware_ {
         frontLeft = hwMap.dcMotor.get("frontLeft");
         backRight = hwMap.dcMotor.get("backRight");
         backLeft = hwMap.dcMotor.get("backLeft");
-        wheelStick = hwMap.dcMotor.get("wheelStick");
+        WheelStick = hwMap.dcMotor.get("WheelStick");
         Flywheel = hwMap.dcMotor.get("Flywheel");
 
         flap = hwMap.servo.get("flap");
@@ -114,7 +114,7 @@ public class Hardware_ {
         backLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         Flywheel.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        wheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        WheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
 
         frontRight.setDirection(DcMotor.Direction.REVERSE);
@@ -123,7 +123,7 @@ public class Hardware_ {
         backLeft.setDirection(DcMotor.Direction.FORWARD);
 
         Flywheel.setDirection(DcMotor.Direction.FORWARD);
-        wheelStick.setDirection(DcMotor.Direction.FORWARD);
+        WheelStick.setDirection(DcMotor.Direction.FORWARD);
 
         wheels.add(frontLeft);
         wheels.add(frontRight);
