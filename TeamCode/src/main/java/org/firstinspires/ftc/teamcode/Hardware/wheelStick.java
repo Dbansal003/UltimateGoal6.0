@@ -20,12 +20,12 @@ public class wheelStick {
     }
 
     public void intake() {
-        wheelStickMotor.setPower(1);
+        wheelStickMotor.setPower(-1);
     }
 
     public void noIntake() {
         wheelStickMotor.setPower(0);
     }
 
-    public void reverseIntake() {wheelStickMotor.setPower(-1);}
+    public void reverseIntake() {wheelStickMotor.setPower(1);}
 }

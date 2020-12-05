@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.Hardware;
 
 import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -15,10 +16,10 @@ public class Servos {
     private Servo latch;
     private CRServo buffer;
 
-    private final double FLAP_UP = 1;
+    private final double FLAP_UP = 0.3;
     private final double FLAP_DOWN = 0;
 
-    private final double KICK_IN = 1;
+    private final double KICK_IN = 0.5;
     private final double KICK_OUT = 0;
 
     private final double RELEASED = 1;
@@ -33,7 +34,7 @@ public class Servos {
         f.setDirection(Servo.Direction.FORWARD);
         k.setDirection(Servo.Direction.FORWARD);
         l.setDirection(Servo.Direction.FORWARD);
-        b.setDirection(CRServo.Direction.FORWARD);
+        b.setDirection(CRServo.Direction.REVERSE);
 
         flap=f;
         kick=k;
@@ -49,11 +50,11 @@ public class Servos {
         flap.setPosition(FLAP_UP);
     }
 
-    public void kick() {
+    public void unkick() {
         kick.setPosition(KICK_IN);
     }
 
-    public void unkick() {
+    public void kick() {
         kick.setPosition(KICK_OUT);
     }
 

@@ -68,7 +68,7 @@ public class GluonsTeleOp extends LinearOpMode {
             double clockwise = Math.abs(gamepad1.right_stick_x) > 0.2 ? -gamepad1.right_stick_x : 0;                                  // 45 degrees   135 degrees GAMER MOMENTS 2020
             double right = Math.abs(gamepad1.left_stick_x) > 0.2 ? gamepad1.left_stick_x : 0;
             //Math for drive relative to theta
-            clockwise *= -1;
+            clockwise *= 1;
 
             double fr = forward - clockwise + right;  //+
             double br = forward - clockwise - right;  //-
@@ -113,7 +113,7 @@ public class GluonsTeleOp extends LinearOpMode {
             // WheelStick Control
             if(gamepad1.right_trigger>0.2) {
 
-                robot.WheelStick.intake();
+                robot.WheelStick.reverseIntake();
                 robot.s.onBuffer();
             }
             else {
@@ -123,10 +123,12 @@ public class GluonsTeleOp extends LinearOpMode {
 
             // Reverse Intake
             if(gamepad1.left_trigger>0.2) {
-                robot.WheelStick.reverseIntake();
+                robot.WheelStick.intake();
+//                robot.s.onBuffer();
             }
             else {
                 robot.WheelStick.noIntake();
+//                robot.s.offBuffer();
             }
 
 
@@ -135,15 +137,15 @@ public class GluonsTeleOp extends LinearOpMode {
             //Flywheel Speed Controls
             if(gamepad2.x)
             {
-                maxPower=.8;
+                maxPower=-.8;
             }
             if(gamepad2.a)
             {
-                maxPower=1;
+                maxPower=-1;
             }
             if(gamepad2.b)
             {
-                maxPower=.6;
+                maxPower=-.6;
             }
 
             //FlyWheel Control
