@@ -10,7 +10,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 @TeleOp(name = "Setup Program", group = "TeleOp")
 
 public class SetupProgram extends LinearOpMode {
-    //    Hardware robot = new Hardware();
+//        Hardware robot = new Hardware();
 //
 //    double factor = 2;
 //
@@ -21,7 +21,7 @@ public class SetupProgram extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
 //        robot.init(hardwareMap, true);
 //        AutonomousTools auto = new AutonomousTools();
-//        //Upon initialization maps robot hardware
+        //Upon initialization maps robot hardware
 //
 //        robot.liftMotorL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 //        robot.liftMotorR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);

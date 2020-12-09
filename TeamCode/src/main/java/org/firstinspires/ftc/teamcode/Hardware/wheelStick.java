@@ -8,15 +8,15 @@ public class wheelStick {
     public DcMotor wheelStickMotor;
 
 
-    public wheelStick(DcMotor WheelStick)
+    public wheelStick(DcMotor f)
     {
 
-        WheelStick.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        f.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        WheelStick.setDirection(DcMotor.Direction.FORWARD);
-        WheelStick.setPower(0);
+        f.setDirection(DcMotor.Direction.FORWARD);
+        f.setPower(0);
 
-        wheelStickMotor=WheelStick;
+        wheelStickMotor=f;
     }
 
     public void intake() {
