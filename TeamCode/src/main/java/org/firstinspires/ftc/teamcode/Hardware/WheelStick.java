@@ -6,8 +6,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 public class WheelStick {
 
     public DcMotor wheelStickMotor;
-
-
+    
     public WheelStick(DcMotor w)
     {
 
