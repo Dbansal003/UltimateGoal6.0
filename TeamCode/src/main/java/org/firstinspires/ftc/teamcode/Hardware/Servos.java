@@ -16,10 +16,10 @@ public class Servos {
     private Servo latch;
     private CRServo buffer;
 
-    private final double FLAP_UP = 0.4;
+    private final double FLAP_UP = 0.42;
     private final double FLAP_DOWN = 0;
 
-    private final double KICK_IN = 0.5;
+    private final double KICK_IN = 0.3;
     private final double KICK_OUT = 0;
 
     private final double RELEASED = 1;
