@@ -34,7 +34,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
-import org.firstinspires.ftc.teamcode.Hardware.wheelStick;
+import org.firstinspires.ftc.teamcode.Hardware.WheelStick;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
@@ -113,21 +113,21 @@ public class GluonsTeleOp extends LinearOpMode {
             // WheelStick Control
             if(gamepad1.right_trigger>0.2) {
 
-                robot.WheelStick.reverseIntake();
+                robot.wheelStick.reverseIntake();
                 robot.s.onBuffer();
             }
             else {
-                robot.WheelStick.noIntake();
+                robot.wheelStick.noIntake();
                 robot.s.offBuffer();
             }
 
             // Reverse Intake
             if(gamepad1.left_trigger>0.2) {
-                robot.WheelStick.intake();
+                robot.wheelStick.intake();
 //                robot.s.onBuffer();
             }
             else {
-                robot.WheelStick.noIntake();
+                robot.wheelStick.noIntake();
 //                robot.s.offBuffer();
             }
 
