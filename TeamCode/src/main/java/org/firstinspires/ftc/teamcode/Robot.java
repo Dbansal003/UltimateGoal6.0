@@ -29,33 +29,33 @@
 
 package org.firstinspires.ftc.teamcode;
 
-//import android.content.BroadcastReceiver;
-//import android.content.ComponentName;
-//import android.content.ContentResolver;
-//import android.content.Context;
-//import android.content.Intent;
-//import android.content.IntentFilter;
-//import android.content.IntentSender;
-//import android.content.ServiceConnection;
-//import android.content.SharedPreferences;
-//import android.content.pm.ApplicationInfo;
-//import android.content.pm.PackageManager;
-//import android.content.res.AssetManager;
-//import android.content.res.Configuration;
-//import android.content.res.Resources;
-//import android.database.DatabaseErrorHandler;
-//import android.database.sqlite.SQLiteDatabase;
-//import android.graphics.Bitmap;
-//import android.graphics.drawable.Drawable;
-//import android.media.MediaPlayer;
-//import android.net.Uri;
-//import android.os.Bundle;
-//import android.os.Handler;
-//import android.os.Looper;
-//import android.os.UserHandle;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.IntentSender;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.UserHandle;
 //import android.support.annotation.NonNull;
 //import android.support.annotation.Nullable;
-//import android.view.Display;
+import android.view.Display;
 
 import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.hardware.bosch.JustLoggingAccelerationIntegrator;
@@ -156,13 +156,13 @@ public class Robot {
         imu = new IMU(gyro);
 
 
-
-        s = new Servos(flap,kick,latch,buffer);
+        s = new Servos(flap, kick, latch, buffer);
         driveTrain = new DriveTrainVel(frontLeft, frontRight, backLeft, backRight);
-        robotMotors = new RobotMotors(frontLeft,frontRight,backLeft,backRight);
+        robotMotors = new RobotMotors(frontLeft, frontRight, backLeft, backRight);
         wheelStick = new WheelStick(wheelStickMotor);
         flywheel = new Flywheel(flyWheelMotor);
     }
+
     public void waitForTick(long periodMs) throws InterruptedException {
         long remaining = periodMs - (long) speedTimer.milliseconds();
 
@@ -171,7 +171,8 @@ public class Robot {
 
         speedTimer.reset();
     }
-}
+
+
 
 //    public void driveToPoint(double xInches, double yInches, double heading, double speedModifier) {
 //
@@ -284,3 +285,5 @@ public class Robot {
 //        }
 //        driveTrain.setMotorPower(0, 0, 0, 0);
 //    }
+
+}

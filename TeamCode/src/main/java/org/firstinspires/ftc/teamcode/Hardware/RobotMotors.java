@@ -123,4 +123,88 @@ public class RobotMotors {
 
         setMotorPower();
     }
+
+
+
+    /**
+     * Activates the robot motors for a period of time.
+     *
+     * @param moveTime The time in milliseconds to move.
+     * @param speed The speed of the motors.
+     *
+     */
+
+    public void moveForward(int moveTime, double speed) throws InterruptedException {
+        /*
+        HOW TO USE:
+        MAXSPEED   67.5 in/sec
+        DISTANCE TRAVELED = MAXSPEED * (moveTime / 1000) * speed
+         */
+        frontRight.setPower(speed);
+        frontLeft.setPower(speed);
+        backRight.setPower(speed);
+        backLeft.setPower(speed);
+        Thread.sleep(moveTime);
+        frontRight.setPower(0);
+        frontLeft.setPower(0);
+        backRight.setPower(0);
+        backLeft.setPower(0);
+    }
+
+
+    /**
+     * Activates the motors in a way that the robot will turn.
+     *
+     * @param degree The degree to turn the robot.
+     * @param dir The direction the robot should turn in.
+     *
+     *
+     */
+
+    public void turn(int degree, char dir) throws InterruptedException {
+        /*
+        HOW TO USE:
+        Enter degree and direction
+         */
+        if (dir == 'r') {
+            setMotorPower(1, -1, 1, -1);
+        }
+        else if (dir == 'l') {
+            setMotorPower(-1, 1, -1, 1);
+        }
+        Thread.sleep((int)(550 * degree / 90));
+        setMotorPower(0);
+    }
+
+    /**
+     * Activates the motors in a way that the robot will strafe.
+     *
+     * @param time The time to activate the robot's motors.
+     * @param dir The direction to strafe in.
+     *
+     */
+
+    public void strafe(int time, char dir) throws InterruptedException {
+
+        if (dir == 'l') {
+
+            frontRight.setPower(-.8);
+            frontLeft.setPower(.8);
+            backRight.setPower(.8);
+            backLeft.setPower(-.8);
+        }
+        else if (dir == 'r'){
+
+            frontRight.setPower(.8);
+            frontLeft.setPower(-.8);
+            backRight.setPower(-.8);
+            backLeft.setPower(.8);
+        }
+        Thread.sleep(time);
+        frontRight.setPower(0);
+        frontLeft.setPower(0);
+        backRight.setPower(0);
+        backLeft.setPower(0);
+    }
+
 }
