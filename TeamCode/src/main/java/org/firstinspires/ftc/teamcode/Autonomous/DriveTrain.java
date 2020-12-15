@@ -56,33 +56,33 @@ public class DriveTrain extends RobotMotorsAuto {
     }
 
 
-    public void moveForward(int inches, double power) {
-        direction = MoveStyle.FORWARD;
-        move(inches, power, getDirs(direction));
-    }
+//    public void moveForward(int inches, double power) {
+//        direction = MoveStyle.FORWARD;
+//        move(inches, power, getDirs(direction));
+//    }
 
-    public void moveBackward(int inches, double power) {
-        direction = MoveStyle.BACKWARD;
-        move(inches, power, getDirs(direction));
-    }
-
-    public void turnLeft(int inches, double power) {
-        direction = MoveStyle.TURN_LEFT;
-        move(inches, power, getDirs(direction));
-    }
-
-    public void turnRight(int inches, double power) {
-        direction = MoveStyle.TURN_RIGHT;
-        move(inches, power, getDirs(direction));
-    }
-
-    public void strafeLeft(int inches, double power) {
-        direction = MoveStyle.LEFT;
-        move(inches, power, getDirs(direction));
-    }
-
-    public void strafeRight(int inches, double power) {
-        direction = MoveStyle.BACKWARD;
-        move(inches, power, getDirs(direction));
-    }
+//    public void moveBackward(int inches, double power) {
+//        direction = MoveStyle.BACKWARD;
+//        move(inches, power, getDirs(direction));
+//    }
+//
+//    public void turnLeft(int inches, double power) {
+//        direction = MoveStyle.TURN_LEFT;
+//        move(inches, power, getDirs(direction));
+//    }
+//
+//    public void turnRight(int inches, double power) {
+//        direction = MoveStyle.TURN_RIGHT;
+//        move(inches, power, getDirs(direction));
+//    }
+//
+//    public void strafeLeft(int inches, double power) {
+//        direction = MoveStyle.LEFT;
+//        move(inches, power, getDirs(direction));
+//    }
+//
+//    public void strafeRight(int inches, double power) {
+//        direction = MoveStyle.BACKWARD;
+//        move(inches, power, getDirs(direction));
+//    }
 }

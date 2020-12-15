@@ -70,10 +70,10 @@ public class GluonsTeleOp extends LinearOpMode {
             //Math for drive relative to theta
             clockwise *= 1;
 
-            double fr = forward - clockwise + right;  //+
-            double br = forward - clockwise - right;  //-
-            double fl = forward + clockwise - right;  //-
-            double bl = forward + clockwise + right;  //+
+            double fr = forward + clockwise + right;  //+
+            double br = forward + clockwise - right;  //-
+            double fl = forward - clockwise - right;  //-
+            double bl = forward - clockwise + right;  //+
 
             fl = Range.scale(fl, -1, 1, -maxPower, maxPower);
             fr = Range.scale(fr, -1, 1, -maxPower, maxPower);
