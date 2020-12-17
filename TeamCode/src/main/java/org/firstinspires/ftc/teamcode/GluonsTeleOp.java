@@ -34,11 +34,13 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.Range;
+
+import org.firstinspires.ftc.teamcode.Hardware.Flywheel;
 import org.firstinspires.ftc.teamcode.Hardware.WheelStick;
 
 import org.firstinspires.ftc.robotcontroller.external.samples.HardwarePushbot;
 
-@com.qualcomm.robotcore.eventloop.opmode.TeleOp(name = "Gluons TeleOp", group = "TeleOp")
+@TeleOp(name = "Gluons TeleOp", group = "TeleOp")
 
 public class GluonsTeleOp extends LinearOpMode {
     Robot robot = new Robot();
@@ -137,15 +139,15 @@ public class GluonsTeleOp extends LinearOpMode {
             //Flywheel Speed Controls
             if(gamepad2.x)
             {
-                maxPower=-.5;
+                Flywheel.maxPower =-.9;
             }
             if(gamepad2.a)
             {
-                maxPower=-1;
+                Flywheel.maxPower=-.85;
             }
             if(gamepad2.b)
             {
-                maxPower=-.2;
+                Flywheel.maxPower=-.8;
             }
 
             //FlyWheel Control

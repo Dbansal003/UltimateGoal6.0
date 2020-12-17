@@ -68,10 +68,10 @@ public class RobotMotors {
         backLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         backRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        frontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        frontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        backLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        backRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        frontRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backLeft.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        backRight.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         wheels.add(frontLeft);
         wheels.add(frontRight);
@@ -95,7 +95,7 @@ public class RobotMotors {
     public void setMotorPower() {
         for (int i = 0; i < wheels.size(); i++) {
             wheels.get(i).setPower(0);
-            wheels.get(i).setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+//            wheels.get(i).setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         }
     }
 

@@ -15,7 +15,7 @@ public class Flywheel {
         flywheelMotor=f;
     }
 
-    public double maxPower=-1;
+    public static double maxPower=-.85;
 
     public void launch()
     {
