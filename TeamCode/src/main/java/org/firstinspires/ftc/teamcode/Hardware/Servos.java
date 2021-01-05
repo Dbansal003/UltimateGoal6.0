@@ -16,10 +16,10 @@ public class Servos {
     private Servo latch;
     private CRServo buffer;
 
-    private final double FLAP_UP = 0.42;
+    private final double FLAP_UP = 0.43;
     private final double FLAP_DOWN = 0;
 
-    private final double KICK_IN = 0.3;
+    private final double KICK_IN = 0.4;
     private final double KICK_OUT = 0;
 
 //    private final double RELEASED = 1;
@@ -57,8 +57,6 @@ public class Servos {
     public void kick() {
         kick.setPosition(KICK_OUT);
     }
-
-//    public void release() {release.setPosition(RELEASED); }
 
     public void latch() {latch.setPosition(LATCH_ON);}
 

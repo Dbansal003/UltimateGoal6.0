@@ -32,8 +32,8 @@ public class remoteAuto extends LinearOpMode{
             }
         }, 29, TimeUnit.SECONDS);
 
-        //Move forward [to launch line]
-        robot.robotMotors.moveForward(1200, 0.6);
+        //Move forward to shooting position
+        robot.robotMotors.moveForward(800, 0.6);
         //lift flap, shooter, kicker 3x [shoot hopefully high goal]
         robot.s.upFlap();
         robot.flywheel.launch();
@@ -46,7 +46,7 @@ public class remoteAuto extends LinearOpMode{
         }
         robot.flywheel.noLaunch();
         //Move forward [park]
-        robot.robotMotors.moveForward(200, 0.6);
+        robot.robotMotors.moveForward(1500, 0.6);
 
 
         executor.schedule(new Runnable() {

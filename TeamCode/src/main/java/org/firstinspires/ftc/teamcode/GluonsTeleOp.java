@@ -133,21 +133,45 @@ public class GluonsTeleOp extends LinearOpMode {
 //                robot.s.offBuffer();
             }
 
+            //WobbleGoal Controls
+            if(gamepad1.dpad_up)
+            {
+                robot.wobbleGoal.raise();
+            }
+            if(gamepad1.dpad_down)
+            {
+                robot.wobbleGoal.lower();
+            }
+
+            //Latch Controls
+            if(gamepad1.a)
+            {
+                if(!latched) {
+                    robot.s.latch();
+                    latched=true;
+                }
+                else {
+                    robot.s.unlatch();
+                    latched=false;
+                }
+                latchButtonCD=100;
+            }
+
 
             // Gamepad 2 - Functions GAMER MOMENTS 2020
 
             //Flywheel Speed Controls
             if(gamepad2.x)
             {
-                Flywheel.maxPower =-.9;
+                Flywheel.maxPower =-1;
             }
             if(gamepad2.a)
             {
-                Flywheel.maxPower=-.85;
+                Flywheel.maxPower=-.9;
             }
             if(gamepad2.b)
             {
-                Flywheel.maxPower=-.8;
+                Flywheel.maxPower=-.85;
             }
 
             //FlyWheel Control
@@ -187,16 +211,16 @@ public class GluonsTeleOp extends LinearOpMode {
 //            }
 
             //Latch Controls
-            if(latchButtonCD == 0 && gamepad2.b) {
-                if(!latched) {
-                    robot.s.latch();
-                    latched=true;
-                } else {
-                    robot.s.unlatch();
-                    latched=false;
-                }
-                latchButtonCD=12;
-            }
+//            if(latchButtonCD == 0 && gamepad2.b) {
+//                if(!latched) {
+//                    robot.s.latch();
+//                    latched=true;
+//                } else {
+//                    robot.s.unlatch();
+//                    latched=false;
+//                }
+//                latchButtonCD=12;
+//            }
 
             // TELEMETRY STATEMENTS
 
