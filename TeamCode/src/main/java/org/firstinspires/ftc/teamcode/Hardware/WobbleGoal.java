@@ -1,9 +1,11 @@
 package org.firstinspires.ftc.teamcode.Hardware;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import org.firstinspires.ftc.teamcode.Robot;
 
 public class WobbleGoal {
 
+    Robot robot=new Robot();
     public DcMotor wobbleGoalMotor;
 
 
@@ -20,14 +22,15 @@ public class WobbleGoal {
     }
 
     public void raise() throws InterruptedException{
-        wobbleGoalMotor.setPower(.8);
-        Thread.sleep(2000);
+        wobbleGoalMotor.setPower(.85);
+        Thread.sleep(3000);
+        robot.s.unlatch();
         wobbleGoalMotor.setPower(0);
     }
 
     public void lower() throws InterruptedException{
-        wobbleGoalMotor.setPower(.3);
-        Thread.sleep(500);
+        wobbleGoalMotor.setPower(-.3);
+        Thread.sleep(1000);
         wobbleGoalMotor.setPower(0);
     }
 }
