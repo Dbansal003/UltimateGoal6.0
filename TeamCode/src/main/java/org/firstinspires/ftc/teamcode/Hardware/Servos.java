@@ -20,7 +20,7 @@ public class Servos {
     private final double FLAP_DOWN = 0;
 
     private final double KICK_IN = 0.3;
-    private final double KICK_OUT = 0;
+    private final double KICK_OUT = 0.04;
 
 //    private final double RELEASED = 1;
 

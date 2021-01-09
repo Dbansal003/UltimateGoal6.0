@@ -116,21 +116,21 @@ public class GluonsTeleOp extends LinearOpMode {
             if(gamepad1.right_trigger>0.2) {
 
                 robot.wheelStick.reverseIntake();
-                robot.s.onBuffer();
+//                robot.s.onBuffer();
             }
             else {
                 robot.wheelStick.noIntake();
-                robot.s.offBuffer();
+//                robot.s.offBuffer();
             }
 
             // Reverse Intake
             if(gamepad1.left_trigger>0.2) {
                 robot.wheelStick.intake();
-                robot.s.onBuffer();
+//                robot.s.onBuffer();
             }
             else {
                 robot.wheelStick.noIntake();
-                robot.s.offBuffer();
+//                robot.s.offBuffer();
             }
 
             //WobbleGoal Controls
