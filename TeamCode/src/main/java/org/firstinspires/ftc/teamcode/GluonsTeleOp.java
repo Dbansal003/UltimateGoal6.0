@@ -137,8 +137,12 @@ public class GluonsTeleOp extends LinearOpMode {
             if(gamepad1.dpad_up)
             {
                 robot.wobbleGoal.raise();
-                robot.s.unlatch();
             }
+            else
+            {
+                robot.wobbleGoal.noRaise();
+            }
+
             if(gamepad1.dpad_down)
             {
                 robot.wobbleGoal.lower();
@@ -155,7 +159,7 @@ public class GluonsTeleOp extends LinearOpMode {
                     robot.s.unlatch();
                     latched=false;
                 }
-                latchButtonCD=100;
+                latchButtonCD=200;
             }
 
 

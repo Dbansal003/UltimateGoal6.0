@@ -40,6 +40,8 @@ public class Servos {
         kick=k;
         latch = l;
         buffer=b;
+
+        latch.setPosition(LATCH_OFF);
     }
 
     public void downFlap() {

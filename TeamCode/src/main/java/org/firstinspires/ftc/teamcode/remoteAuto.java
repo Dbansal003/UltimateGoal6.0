@@ -39,7 +39,7 @@ public class remoteAuto extends LinearOpMode{
         robot.s.upFlap();
         robot.flywheel.launch();
         Thread.sleep(3000);
-        for(int i=1; i<=3; i++) {
+        for(int i=1; i<=4; i++) {
             robot.s.kick();
             Thread.sleep(1500);
             robot.s.unkick();
@@ -51,6 +51,7 @@ public class remoteAuto extends LinearOpMode{
         robot.wheelStick.intake();
         Thread.sleep(1000);
         robot.wheelStick.noIntake();
+        robot.s.downFlap();
 
 
         executor.schedule(new Runnable() {

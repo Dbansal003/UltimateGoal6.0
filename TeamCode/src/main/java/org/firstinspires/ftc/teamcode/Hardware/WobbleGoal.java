@@ -20,15 +20,18 @@ public class WobbleGoal {
         wobbleGoalMotor=wo;
     }
 
-    public void raise() throws InterruptedException{
-        wobbleGoalMotor.setPower(.85);
-        Thread.sleep(3000);
+    public void raise() {
+        wobbleGoalMotor.setPower(1);
+    }
+
+    public void noRaise()
+    {
         wobbleGoalMotor.setPower(0);
     }
 
     public void lower() throws InterruptedException{
         wobbleGoalMotor.setPower(-.3);
-        Thread.sleep(1000);
+        Thread.sleep(300);
         wobbleGoalMotor.setPower(0);
     }
 }
