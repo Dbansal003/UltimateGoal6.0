@@ -41,7 +41,7 @@ public class Servos {
         latch = l;
         buffer=b;
 
-        latch.setPosition(LATCH_OFF);
+        latch.setPosition(LATCH_ON);
     }
 
     public void downFlap() {

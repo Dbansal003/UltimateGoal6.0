@@ -123,7 +123,7 @@ public class GluonsTeleOp extends LinearOpMode {
 //                robot.s.offBuffer();
             }
 
-            // Reverse Intake
+            // Intake
             if(gamepad1.left_trigger>0.2) {
                 robot.wheelStick.intake();
 //                robot.s.onBuffer();
@@ -168,11 +168,11 @@ public class GluonsTeleOp extends LinearOpMode {
             //Flywheel Speed Controls
             if(gamepad2.x)
             {
-                Flywheel.maxPower =-1;
+                Flywheel.maxPower =-.8;
             }
             if(gamepad2.a)
             {
-                Flywheel.maxPower=-.9;
+                Flywheel.maxPower=-.75;
             }
             if(gamepad2.b)
             {
