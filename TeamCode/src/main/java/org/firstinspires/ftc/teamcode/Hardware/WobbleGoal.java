@@ -21,7 +21,7 @@ public class WobbleGoal {
     }
 
     public void raise() {
-        wobbleGoalMotor.setPower(1);
+        wobbleGoalMotor.setPower(.8);
     }
 
     public void noRaise()
@@ -31,7 +31,7 @@ public class WobbleGoal {
 
     public void lower() throws InterruptedException{
         wobbleGoalMotor.setPower(-.3);
-        Thread.sleep(300);
+        Thread.sleep(500);
         wobbleGoalMotor.setPower(0);
     }
 }

@@ -12,7 +12,6 @@ public class Servos {
 
     private Servo flap;             // Hub 3 Servo Slot 3
     private Servo kick;             // Hub 3 Servo Slot 2
-//    private Servo release;          // Hub 3 Servo Slot 4
     private Servo latch;
     private CRServo buffer;
 
@@ -22,9 +21,7 @@ public class Servos {
     private final double KICK_IN = 0.3;
     private final double KICK_OUT = 0.04;
 
-//    private final double RELEASED = 1;
-
-    private final double LATCH_ON = 1;
+    private final double LATCH_ON = 0.7;
     private final double LATCH_OFF = 0;
 
     public Servos(Servo f, Servo k, Servo l, CRServo b)

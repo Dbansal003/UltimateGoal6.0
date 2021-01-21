@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-@Autonomous(name="Normal Auto",group="Autonomous")
-public class remoteAuto extends LinearOpMode{
+@Autonomous(name="High Battery Auto",group="Autonomous")
+
+public class HighBatteryAuto extends LinearOpMode{
     private Robot robot=new Robot();
 
     public void runOpMode() throws InterruptedException {
@@ -33,7 +34,7 @@ public class remoteAuto extends LinearOpMode{
         }, 29, TimeUnit.SECONDS);
 
         //Move forward to shooting position
-        robot.robotMotors.moveForward(2200, 0.6);
+        robot.robotMotors.moveForward(1500, 0.6);
         robot.wobbleGoal.lower();
         //Shoot three times
         robot.s.upFlap();
