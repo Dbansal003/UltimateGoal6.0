@@ -43,7 +43,7 @@ public class remoteAuto extends LinearOpMode{
         Thread.sleep(1500);
         robot.s.unkick();
         Thread.sleep(1500);
-        robot.robotMotors.moveForward(700,-0.6);
+        robot.robotMotors.moveForward(500,-0.6);
         robot.robotMotors.turn(4,'r');
         for(int i=1; i<=3; i++) {
             robot.s.kick();
