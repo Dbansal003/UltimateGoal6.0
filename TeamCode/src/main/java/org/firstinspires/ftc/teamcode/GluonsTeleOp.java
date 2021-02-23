@@ -168,7 +168,7 @@ public class GluonsTeleOp extends LinearOpMode {
             //Flywheel Speed Controls
             if(gamepad2.x)
             {
-                Flywheel.maxPower =-.8;
+                Flywheel.maxPower =-1;
             }
             if(gamepad2.a)
             {
