@@ -33,7 +33,7 @@ public class remoteAuto extends LinearOpMode{
         }, 29, TimeUnit.SECONDS);
 
         //Move forward to shooting position
-        robot.robotMotors.moveForward(2100, 0.6);
+        robot.robotMotors.moveForward(1600, 0.6);
         robot.wobbleGoal.lower();
         //Shoot three times
         robot.s.upFlap();
@@ -43,8 +43,7 @@ public class remoteAuto extends LinearOpMode{
         Thread.sleep(1500);
         robot.s.unkick();
         Thread.sleep(1500);
-        robot.robotMotors.moveForward(500,-0.6);
-        robot.robotMotors.turn(4,'r');
+//        robot.robotMotors.moveForward(200,-0.6);
         for(int i=1; i<=3; i++) {
             robot.s.kick();
             Thread.sleep(1500);
@@ -53,7 +52,7 @@ public class remoteAuto extends LinearOpMode{
         }
         robot.flywheel.noLaunch();
         //Park on launch line
-        robot.robotMotors.moveForward(1500, 0.6);
+        robot.robotMotors.moveForward(1200, 0.6);
         robot.wheelStick.intake();
         Thread.sleep(1000);
         robot.wheelStick.noIntake();
