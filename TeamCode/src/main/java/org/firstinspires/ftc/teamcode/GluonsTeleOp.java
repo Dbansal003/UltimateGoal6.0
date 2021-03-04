@@ -149,7 +149,7 @@ public class GluonsTeleOp extends LinearOpMode {
             }
 
             //Latch Controls
-            if(gamepad1.a)
+            if(gamepad1.a&&latchButtonCD==0)
             {
                 if(!latched) {
                     robot.s.latch();
