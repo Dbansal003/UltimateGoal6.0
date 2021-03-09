@@ -40,7 +40,7 @@ public class AmbitiousAuto extends LinearOpMode{
         robot.wobbleGoal.lower();
         //Shoot three times
         robot.s.upFlap();
-        robot.robotMotors.turn(18,'r');
+        robot.robotMotors.turn(9,'r');
         robot.flywheel.launch();
         Thread.sleep(3000);
         for(int i=1; i<=3; i++) {
@@ -53,7 +53,7 @@ public class AmbitiousAuto extends LinearOpMode{
         }
         robot.flywheel.noLaunch();
         //Park on launch line
-        robot.robotMotors.moveForward(800, 0.6);
+        robot.robotMotors.moveForward(1000, 0.6);
         robot.wheelStick.intake();
         Thread.sleep(200);
         robot.wheelStick.noIntake();
