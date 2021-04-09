@@ -36,7 +36,7 @@ public class AmbitiousAuto extends LinearOpMode{
         //Move forward to shooting position
         robot.robotMotors.moveForward(2600, 0.6);
         robot.robotMotors.moveForward(600, -0.6);
-        robot.robotMotors.strafe(1900,'r');
+        robot.robotMotors.strafe(2000,'r');
         robot.wobbleGoal.lower();
         //Shoot three times
         robot.s.upFlap();
@@ -48,7 +48,7 @@ public class AmbitiousAuto extends LinearOpMode{
             Thread.sleep(1500);
             robot.s.unkick();
             Thread.sleep(1500);
-            robot.robotMotors.strafe(250,'r');
+            robot.robotMotors.strafe(200,'r');
             robot.robotMotors.turn(6,'r');
         }
         robot.flywheel.noLaunch();

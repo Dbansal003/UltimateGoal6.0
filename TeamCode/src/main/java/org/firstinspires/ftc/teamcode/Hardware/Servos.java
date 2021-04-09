@@ -22,7 +22,7 @@ public class Servos {
     private final double KICK_OUT = 0.04;
 
     private final double LATCH_ON = 1;
-    private final double LATCH_OFF = 0.6;
+    private final double LATCH_OFF = 0.55;
 
     public Servos(Servo f, Servo k, Servo l, CRServo b)
     {
