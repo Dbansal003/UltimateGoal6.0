@@ -159,7 +159,7 @@ public class GluonsTeleOp extends LinearOpMode {
                     robot.s.unlatch();
                     latched=false;
                 }
-                latchButtonCD=200;
+                latchButtonCD=12;
             }
 
 
