@@ -196,7 +196,7 @@ public class GluonsTeleOp extends LinearOpMode {
                     robot.s.downFlap();
                     flapUp=false;
                 }
-                flapButtonCD=100;
+                flapButtonCD=12;
             }
 
             //Kicker Controls

@@ -39,7 +39,7 @@ public class goodAuto extends LinearOpMode{
         robot.robotMotors.moveForward(200, -0.6);
         robot.robotMotors.strafe(1900,'r');
         robot.wobbleGoal.lower();
-        Flywheel.maxPower=-.95;
+        Flywheel.maxPower=-.92;
         //Shoot three times
         robot.s.upFlap();
         robot.robotMotors.turn(4,'r');
@@ -50,12 +50,13 @@ public class goodAuto extends LinearOpMode{
         robot.s.unkick();
         Thread.sleep(1500);
         robot.robotMotors.strafe(400,'r');
+        robot.robotMotors.turn(4,'r');
         robot.s.kick();
         Thread.sleep(1500);
         robot.s.unkick();
         Thread.sleep(1500);
         robot.robotMotors.strafe(400,'r');
-        robot.robotMotors.turn(5,'r');
+        robot.robotMotors.turn(3,'r');
         robot.s.kick();
         Thread.sleep(1500);
         robot.s.unkick();
